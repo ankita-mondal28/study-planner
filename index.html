@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Planr — Study Smarter</title>
+<meta name="description" content="Planr is an AI-powered study planner that builds a personalised day-by-day study schedule from your tasks, deadlines, and priorities.">
+<meta name="theme-color" content="#425749">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%23425749'/><text y='.9em' font-size='70' x='12'>📅</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="./src/style.css">
+</head>
+<body>
+<header>
+  <div class="header-left">
+    <span class="logo">Planr</span>
+    <span class="tagline">study smarter</span>
+  </div>
+  <div class="header-right">
+    <span id="task-summary" class="task-summary"></span>
+  </div>
+</header>
+<main>
+  <section class="left-panel">
+    <div class="left-panel-header">
+      <h2>Your Tasks</h2>
+      <button id="clear-all-btn" class="clear-all-btn" title="Clear all tasks">Clear All</button>
+    </div>
+    <form id="task-form">
+      <div class="field">
+        <label for="task-name">Task Name</label>
+        <input type="text" id="task-name" placeholder="e.g., Calculus Chapter 3" required>
+      </div>
+      <div class="field">
+        <label for="task-subject">Subject</label>
+        <input type="text" id="task-subject" placeholder="e.g., Mathematics" required>
+      </div>
+      <div class="field">
+        <label for="task-deadline">Deadline</label>
+        <input type="date" id="task-deadline" required>
+      </div>
+      <div class="field">
+        <label for="task-priority">Priority</label>
+        <select id="task-priority">
+          <option>High</option>
+          <option selected>Medium</option>
+          <option>Low</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="task-type">Task Type</label>
+        <select id="task-type">
+          <option>Reading</option>
+          <option>Video</option>
+          <option>Practice</option>
+          <option>Revision</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="task-hours">Estimated Hours</label>
+        <input type="number" id="task-hours" min="0.5" max="12" step="0.5" value="1">
+      </div>
+      <button type="submit" id="add-task-btn">Add Task</button>
+    </form>
+    <div id="task-list"></div>
+  </section>
+  <section class="right-panel">
+    <div class="plan-header">
+      <div class="plan-header-left">
+        <h2>Your Plan</h2>
+        <span id="plan-stale-badge" class="plan-stale-badge" style="display:none">⚠ Tasks updated — regenerate plan</span>
+      </div>
+      <div class="plan-header-right">
+        <button id="clear-plan-btn" class="clear-plan-btn" style="display:none">✕ Clear</button>
+        <button id="export-plan-btn" class="export-plan-btn" style="display:none">↗ Export</button>
+        <button id="generate-plan-btn">Generate Plan</button>
+      </div>
+    </div>
+    <div id="plan-container">
+      <div class="empty-state-wrapper">
+        <div class="empty-state-icon">📋</div>
+        <p class="empty-state-title">No plan yet</p>
+        <p class="empty-state-sub">Add your tasks on the left, then click <strong>Generate Plan</strong> to build your personalised study schedule.</p>
+      </div>
+    </div>
+    <div id="completed-section" style="display:none">
+      <h3 class="completed-heading">✓ Completed</h3>
+      <div id="completed-list"></div>
+    </div>
+  </section>
+</main>
+<script type="module" src="./src/main.js"></script>
+<footer>
+  <span>Planr v1.0</span>
+  <span>·</span>
+  <span>Built by Ankita Mondal</span>
+  <span>·</span>
+  <span>2026</span>
+  <span>·</span>
+    <a href="mailto:ankitamondal2801@gmail.com" title="Email" target="_blank">
+    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+  </a>
+  <a href="https://linkedin.com/in/ankitamondal-dev" title="LinkedIn" target="_blank">
+    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
+  </a>
+</footer>
+</body>
+</html>
