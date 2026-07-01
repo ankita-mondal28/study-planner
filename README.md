@@ -98,13 +98,14 @@ npm run dev
 
 ## Live Demo
 
-[planr.vercel.app](https://planr.vercel.app) ← update this after deploying
+[planr-by-ankita.vercel.app](https://planr-by-ankita.vercel.app) 
 
 ---
 
 ## Screenshots
 
-<!-- Add screenshots after deployment -->
+<img width="1917" height="910" alt="image" src="https://github.com/user-attachments/assets/78faf101-581e-4d1c-8690-037ae23c2aaa" />
+
 
 ---
 
